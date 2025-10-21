@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calc</title>
+    <style>
+        div {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(7, 100px);
+        }
+        #equal {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="disp" readonly>
+
+    <div>
+        <button onclick="add(1)">1</button>
+        <button onclick="add(2)">2</button>
+        <button onclick="add(3)">3</button>
+        <button onclick="add('+')">+</button>
+        <button onclick="add(4)">4</button>
+        <button onclick="add(5)">5</button>
+        <button onclick="add(6)">6</button>
+        <button onclick="add('-')">-</button>
+        <button onclick="add(7)">7</button>
+        <button onclick="add(8)">8</button>
+        <button onclick="add(9)">9</button>
+        <button onclick="add('*')">*</button>
+        <button onclick="f('sin')">sin</button>
+        <button onclick="f('cos')">cos</button>
+        <button onclick="f('tan')">tan</button>
+        <button onclick="add('/')">/</button>
+        <button onclick="clr()">CLR</button>
+        <button onclick="calc()" id="equal">=</button>
+        <button onclick="del()">DEL</button>
+    </div>
+
+    <script>
+        let d = document.getElementById("disp")
+
+        function add(c) {
+            d.value += c
+        }
+
+        function clr() {
+            d.value = ""
+        }
+
+        function del() {
+            d.value = d.value.slice(0, -1);
+        }
+
+        function f(op) {
+            switch (op) {
+            case 'sin':
+                d.value = Math.sin(eval(d.value))
+                break
+            case 'cos':
+                d.value = Math.cos(eval(d.value))
+                break
+            case 'tan':
+                d.value = Math.tan(eval(d.value))
+                break
+            default:
+                break;
+            }
+        }
+
+        function calc() {
+            d.value = eval(d.value);
+        }
+    </script>
+
+</body>
+
+</html>
