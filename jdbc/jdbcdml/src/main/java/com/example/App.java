@@ -18,5 +18,9 @@ public class App {
             
             System.out.println(id + " | " + name + " | " + email);
         }
+
+        rs.close();
+        stmt.close();
+        conn.close();
     }
 }
