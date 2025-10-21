@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pay</title>
+  </head>
+  <body>
+    <form id="payForm" class="hidden" onsubmit="pay(event)">
+      <h3>Payment</h3>
+      <input id="card" placeholder="Card Number" />
+      <input id="cvv" placeholder="CVV" />
+      <button type="submit">Pay</button>
+      <p id="perr" class="error" style="color: red;"></p>
+    </form>
+
+    <script>
+      function pay(e) {
+        e.preventDefault();
+        let c = card.value.trim(), v = cvv.value.trim();
+        
+        if (c.length !== 16 || isNaN(c) || v.length !== 3 || isNaN(v))
+          return (perr.textContent = "Invalid card!");
+        
+        perr.textContent = "";
+        alert("Payment successful!");
+      }
+    </script>
+  </body>
+</html>

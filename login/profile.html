@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Profile</title>
+  </head>
+  <body>
+    <h1>Welcome, <span id="username"></span></h1>
+    <p>E-mail: <span id="email"></span></p>
+
+    <button onclick="location.href = './payment.html'">Pay us</button>
+
+    <script>
+      document.getElementById("username").innerText = localStorage.getItem("username");
+      document.getElementById("email").innerText = localStorage.getItem("email");
+    </script>
+  </body>
+</html>
